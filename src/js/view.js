@@ -52,10 +52,7 @@ View.prototype.toggleCheckTodo = function (event) {
 
 View.prototype.addTodo = function () {
   let title = this.$addInput.value
-  this.controller.add({
-    title,
-    checked: false
-  })
+  this.controller.add(title)
   this.$addInput.value = ''
 }
 

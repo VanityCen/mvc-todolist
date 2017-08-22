@@ -1,0 +1,11 @@
+#app {
+  margin-top:200px;
+  display:flex;
+  /*justify-content: center;*/
+}
+.wrapper {
+  
+}
+.list .item.checked .title{
+  text-decoration: line-through;
+}

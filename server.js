@@ -10,7 +10,7 @@ const port = 3000
 
 app.use(webpackDevMiddleware(compiler, {
   publickPath: config.output.publicPath,
-  quiet: true
+  quiet: false
 }))
 
 let hotMiddleware = webpackHotMiddleware(compiler, {

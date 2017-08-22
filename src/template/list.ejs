@@ -1,0 +1,5 @@
+<ul class="list">
+  <% todos.forEach(function(todo) { %>
+    <li class="item <%= todo.checked ? 'checked' : '' %>"><input type="checkbox" class="checkbox"><span class="title"><%= todo.title %></span><button class="btn-delete">Remove</button></li>
+  <% }) %>
+</ul>

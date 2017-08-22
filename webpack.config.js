@@ -17,8 +17,14 @@ module.exports = {
       inject: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.ProvidePlugin({
+      _: 'underscore'
+    })
   ],
+  devServer: {
+    port: 3000
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
@@ -32,6 +38,13 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.ejs$/,
+        use: [
+          'ejs-loader'
+        ],
+        include: path.resolve(__dirname, 'src')
       },
       {
         test: /\.js$/,

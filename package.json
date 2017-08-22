@@ -12,7 +12,6 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
-    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "ejs": "^2.5.7",
     "ejs-loader": "^0.3.0",
@@ -23,7 +22,6 @@
     "underscore": "^1.8.3",
     "webpack": "^3.5.4",
     "webpack-dev-middleware": "^1.12.0",
-    "webpack-dev-server": "^2.7.1",
     "webpack-hot-middleware": "^2.18.2"
   }
 }

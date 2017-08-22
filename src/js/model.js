@@ -2,10 +2,7 @@ import emitter from './emitter'
 
 export default function Todo () {
   this.todos = [{
-    title: 'a',
-    checked: false
-  }, {
-    title: 'b',
+    title: 'Get High',
     checked: true
   }]
 }
@@ -21,5 +18,11 @@ Todo.prototype.add = function (todo) {
 
 Todo.prototype.remove = function (index) {
   this.todos.splice(index, 1)
+  emitter.emit('update')
+}
+
+Todo.prototype.toggleCheck = function (index) {
+  let target = this.todos[index]
+  target.checked = !target.checked
   emitter.emit('update')
 }

@@ -22,9 +22,6 @@ module.exports = {
       _: 'underscore'
     })
   ],
-  devServer: {
-    port: 3000
-  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',

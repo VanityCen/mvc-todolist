@@ -11,3 +11,7 @@ Controller.prototype.add = function (todo) {
 Controller.prototype.remove = function (index) {
   this.todo.remove(index)
 }
+
+Controller.prototype.toggleCheck = function (index) {
+  this.todo.toggleCheck(index)
+}

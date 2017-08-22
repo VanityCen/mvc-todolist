@@ -12,6 +12,8 @@ View.prototype.build = function () {
   this.compile()
   this.initAddTodo()
   this.initListener()
+  this.initToggleCheck()
+  this.initRemoveTodo()
 }
 
 View.prototype.compile = function () {
@@ -21,7 +23,31 @@ View.prototype.compile = function () {
 View.prototype.initAddTodo = function () {
   this.$addInput = document.querySelector('.newTodo')
   this.$addButton = document.querySelector('.add')
-  this.$addButton.addEventListener('click', this.addTodo.bind(this))
+  this.$addButton.addEventListener('click', this.addTodo.bind(this), false)
+}
+
+View.prototype.initToggleCheck = function () {
+  this.el.addEventListener('change', this.toggleCheckTodo.bind(this))
+}
+
+View.prototype.initRemoveTodo = function () {
+  this.el.addEventListener('click', this.removeTodo.bind(this))
+}
+
+View.prototype.removeTodo = function (event) {
+  const target = event.target
+  if (target.className === 'btn-delete') {
+    const $li = target.parentNode
+    this.controller.remove($li.getAttribute('data-index'))
+  }
+}
+
+View.prototype.toggleCheckTodo = function (event) {
+  const target = event.target
+  if (target.className === 'checkbox') {
+    const $li = target.parentNode
+    this.controller.toggleCheck($li.getAttribute('data-index'))
+  }
 }
 
 View.prototype.addTodo = function () {
@@ -30,6 +56,7 @@ View.prototype.addTodo = function () {
     title,
     checked: false
   })
+  this.$addInput.value = ''
 }
 
 View.prototype.initListener = function () {
